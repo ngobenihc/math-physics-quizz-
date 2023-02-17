@@ -7,7 +7,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     MyApp( child: const MaterialApp(
-      title: 'Flutter Demo',
+      title: 'the quiz app',
       home: MySplashScreen(),
 
     ),
@@ -45,4 +45,11 @@ class _MyAppState extends State<MyApp> {
       child: widget.child!,);
   }
 }
+
+
+
+
+
+
+
 

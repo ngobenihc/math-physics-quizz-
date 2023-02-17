@@ -1,19 +1,9 @@
 class Question {
-  String questionText ="";
-  bool questionAnswer = true;
+  String rondomTextQuestions ="";
+  bool rondomTextAnswer = true;
 
-  Question(String q, bool a) {
-    questionText = q;
-    questionAnswer = a;
+  Question(String randomQuetions, bool randomAnswers) {
+    rondomTextQuestions = randomQuetions;
+    rondomTextAnswer = randomAnswers;
   }
 }
-
-// class Question {
-//   String questionText;
-//   bool questionAnswer;
-
-//   Question(String q, bool a) {
-//     questionText = q;
-//     questionAnswer = a;
-//   }
-// }

@@ -8,6 +8,10 @@
 /home/anabeal/Documents/ana/build/linux/x64/debug/bundle/data/flutter_assets/shaders/ink_sparkle.frag
 /home/anabeal/Documents/ana/build/linux/x64/debug/bundle/data/flutter_assets/FontManifest.json
 /home/anabeal/Documents/ana/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.json
+/home/anabeal/Documents/ana/build/linux/x64/debug/bundle/data/flutter_assets/images/maths.jpg
+/home/anabeal/Documents/ana/build/linux/x64/debug/bundle/data/flutter_assets/images/mainApp.jpg
+/home/anabeal/Documents/ana/build/linux/x64/debug/bundle/data/flutter_assets/images/scientific-formulas-mathematics-and-physics-calculus-on-class-chalkboard-algebra-and-physical-science-.jpg
+/home/anabeal/Documents/ana/build/linux/x64/debug/bundle/data/flutter_assets/images/criticalThinking.png
 /home/anabeal/Documents/ana/build/linux/x64/debug/bundle/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
 /home/anabeal/Documents/ana/build/linux/x64/debug/bundle/data/flutter_assets/packages/rflutter_alert/assets/images/icon_error.png
 /home/anabeal/Documents/ana/build/linux/x64/debug/bundle/data/flutter_assets/packages/rflutter_alert/assets/images/icon_warning.png

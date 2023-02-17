@@ -1,6 +1,7 @@
-
-import 'package:ana/randomQueston/mainRandom.dart';
+import 'package:ana/randomQueston/random_splash_screen.dart';
+import 'package:ana/scienceQizz/science_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'mathQizz/maths_splash_screen.dart';
 
 
 
@@ -16,54 +17,66 @@ class _MyMainPageState extends State<MyMainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:  const Center(child: Text("pick the one lift giver or passenger ")),),
+      appBar: AppBar(title:  const Center(child: Text("Select the subject quiz that you want to answer ")),),
 
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
+        child: Center(
           child: Column(
+            // mainAxisAlignment: MainAxisAlignment.end,
             children: [
 
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
 
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(onPressed: (){
+              ElevatedButton(onPressed: (){
 
-                    Navigator.push(context, MaterialPageRoute(builder:(c)=> Quizzler()));
+                Navigator.push(context, MaterialPageRoute(builder:(c)=> const RandomSplashScreen()));
 
 
-                  },
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blueGrey
-                    ),
-                    child: const Text("Random Quizzer"),
-                  ),
-
-
-                  // ElevatedButton(onPressed: (){
-                  //
-                  //
-                  //   Navigator.push(context, MaterialPageRoute(builder:(c)=> const PassengerLoginScreen()));
-                  //
-                  //
-                  // },
-                  //   style: ElevatedButton.styleFrom(
-                  //       backgroundColor: Colors.blueGrey
-                  //   ),
-                  //   child: const Text("LogIn as passenger"),
-                  // ),
-                ],
+              },
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blueGrey
+                ),
+                child: const Text("Random Quizzer"),
               ),
 
+              const SizedBox(height: 50),
 
-              const SizedBox(height: 10,),
+
+              ElevatedButton(onPressed: (){
+
+
+                Navigator.push(context, MaterialPageRoute(builder:(c)=>  MathsSplashScreen()));
+
+
+              },
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blueGrey
+                ),
+                child: const Text("Mathematics Quizzer"),
+              ),
+
+              const SizedBox(height: 50),
+
+
+              ElevatedButton(onPressed: (){
+
+
+                Navigator.push(context, MaterialPageRoute(builder:(c)=>  PhysicsSplashScreen()));
+
+
+              },
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blueGrey
+                ),
+                child: const Text("Physical Science Quizzer"),
+              ),
             ],
-          ),
-        ),
+
+
+          )
       ),
+        ),
     );
   }
 }

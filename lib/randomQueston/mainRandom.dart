@@ -1,14 +1,15 @@
-import 'package:ana/randomQueston/quiz_brain.dart';
+import 'package:ana/randomQueston/randomQuestionList.dart';
+import 'package:ana/randomQueston/random_splash_screen.dart';
+import 'package:ana/selectQizz.dart';
 import 'package:ana/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 
-QuizBrain quizBrain = QuizBrain();
+RandomQuizQuestionList randonQuizzList = RandomQuizQuestionList();
 
-//void main() => runApp(Quizzler());
 
-class Quizzler extends StatelessWidget {
+class RandomQuiz extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -34,36 +35,27 @@ class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreKeeper = [];
 
   void checkAnswer(bool userPickedAnswer) {
-    bool correctAnswer = quizBrain.getCorrectAnswer();
+    bool correctAnswer = randonQuizzList.getCorrectAnswer();
 
 
 
     setState(() {
-      //TODO: Step 4 - Use IF/ELSE to check if we've reached the end of the quiz. If so,
-      //On the next line, you can also use if (quizBrain.isFinished()) {}, it does the same thing.
-      if (quizBrain.isFinished() == true) {
-        //TODO Step 4 Part A - show an alert using rFlutter_alert,
+      if (randonQuizzList.isFinished() == true) {
 
-        //This is the code for the basic alert from the docs for rFlutter Alert:
-        //Alert(context: context, title: "RFLUTTER", desc: "Flutter is awesome.").show();
 
-        //Modified for our purposes:
         Alert(
           context: context,
-          title: 'Finished!',
-          desc: 'You\'ve reached the end of the quiz.',
+          title: 'Done!',
+          desc: 'level 1 done!',
         ).show();
 
-        //TODO Step 4 Part C - reset the questionNumber,
 
-        quizBrain.reset();
+        randonQuizzList.reset();
 
 
-        //TODO Step 4 Part D - empty out the scoreKeeper.
         scoreKeeper = [];
       }
 
-      //TODO: Step 6 - If we've not reached the end, ELSE do the answer checking steps below 👇
       else {
         if (userPickedAnswer == correctAnswer) {
           scoreKeeper.add(const Icon(
@@ -76,7 +68,7 @@ class _QuizPageState extends State<QuizPage> {
             color: Colors.red,
           ));
         }
-        quizBrain.nextQuestion();
+        randonQuizzList.nextQuestion();
       }
     });
   }
@@ -93,7 +85,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                quizBrain.getQuestionText(),
+                randonQuizzList.getQuestionText(),
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 25.0,
@@ -112,37 +104,42 @@ class _QuizPageState extends State<QuizPage> {
                 },
                 child: const Text('True',
                     style: TextStyle(
-                      color: Color.fromARGB(255, 236, 8, 8),
+                      color: Colors.white,
                       fontSize: 20.0,
                     )),
               )),
         ),
         Expanded(
           child: Padding(
-              padding: EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(15.0),
               child: TextButton(
                 onPressed: () {
                   checkAnswer(false);
                 },
                 child: const Text('False',
                     style: TextStyle(
-                      color: Color.fromARGB(255, 236, 8, 8),
+                      color: Colors.white,
                       fontSize: 20.0,
 
-                    )),
-              )),
+                    )
+                ),
+              )
+          ),
         ),
         Expanded(child: ElevatedButton(onPressed: (){
 
 
-          Navigator.push(context, MaterialPageRoute(builder:(c)=> const MySplashScreen()));
+          Navigator.push(context, MaterialPageRoute(builder:(c)=>  const MySplashScreen()));
 
 
         },
           style: ElevatedButton.styleFrom(
               backgroundColor: Colors.blueGrey
           ),
-          child: const Text("Quite"),
+          child: const Text("Quite", style: TextStyle(
+                    color: Colors.red,
+                    fontSize: 20.0,
+                  ) ),
         ),
         ),
         Row(
